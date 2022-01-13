@@ -1,0 +1,9 @@
+.review {
+  margin: 1rem 0;
+  /* padding: auto 1.5rem; */
+}
+
+.data {
+  display: flex;
+  justify-content: space-between;
+}

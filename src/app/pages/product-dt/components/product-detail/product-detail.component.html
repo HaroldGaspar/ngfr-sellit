@@ -1,0 +1,36 @@
+<ng-container *ngIf="product$ | async as product; else elseProductLoader">
+  <mat-card class="product">
+    <img src="{{ product.photo }}" alt="" class="img-fluid" />
+    <mat-card-content>
+      <mat-card-title>
+        {{ product.name | uppercase }}
+      </mat-card-title>
+      <span class="span">{{ product.mark }}</span>
+      <p *ngIf="product.description; else nodes">
+        {{ product.description }}
+      </p>
+      <ng-template #nodes>
+        <p>
+          <i>NO DESCRIPTION</i>
+        </p>
+      </ng-template>
+    </mat-card-content>
+    <mat-card-actions>
+      <button
+        mat-flat-button
+        color="primary"
+        (click)="btnBuy(product)"
+        disabled="{{ inCart }}"
+      >
+        {{ product.price | currency: "S/." }}
+        <mat-icon>add_shopping_cart</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</ng-container>
+
+<ng-template #elseProductLoader>
+  <!-- <div class="lattest__list"> -->
+  <app-product-loaders [bars]="3" [barHeight]="9"> </app-product-loaders>
+  <!-- </div> -->
+</ng-template>

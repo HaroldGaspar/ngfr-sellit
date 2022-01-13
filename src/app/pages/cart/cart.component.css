@@ -1,0 +1,38 @@
+.container-two {
+  display: grid;
+  max-width: 1200px;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 0 2em;
+  height: 85vh;
+
+  @media (max-width: 800px) {
+    max-width: 500px;
+    grid-template-columns: 1fr;
+  }
+
+  /* @media (max-width: 500px) {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  @media (max-width: 300px) {
+    grid-template-columns: minmax(0px, 1fr);
+  } */
+}
+.container-two > * {
+  max-width: 380px;
+}
+
+.card-detail__list {
+  /* height: inherit; */
+  /* overflow: auto; */
+  margin: 0 auto;
+  width: 100%;
+  /* border-radius: 4px; */
+}
+
+.invoice__card {
+  /* border: 1px solid #ccc; */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}

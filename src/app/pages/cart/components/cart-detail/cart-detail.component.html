@@ -1,0 +1,38 @@
+<h2>Carrito</h2>
+
+<ng-container *ngIf="cart$ | async; else productLoader">
+  <ng-container *ngIf="qty$ | async; else empty">
+    <div class="detail__container">
+      <!-- <div
+        *ngFor="let product of cart$ | async"
+        app-product-detail
+        class="w-100 d-flex detail__card"
+        [productDT]="product"
+      > -->
+      <app-product-detail
+        *ngFor="let product of cart$ | async"
+        [productDT]="product"
+        class="w-100 d-flex detail__card"
+      ></app-product-detail>
+      <!-- </div> -->
+    </div>
+  </ng-container>
+</ng-container>
+
+<ng-template #productLoader>
+  <div class="row">
+    <div class="col-12 text-center">
+      <h2>Cargando</h2>
+      <div class="spinner-border" role="status">
+        <span class="sr-only"></span>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<ng-template #empty>
+  <div class="row">
+    <div class="col-12 text-center">
+      <h2>Aun no se han agregado productos al carrito</h2>
+    </div>
+  </div>
+</ng-template>

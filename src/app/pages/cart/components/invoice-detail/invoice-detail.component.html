@@ -1,0 +1,20 @@
+<div class="invoice__card">
+  <div class="invoice__list">
+    <h2>Factura</h2>
+    <div *ngFor="let productDT of cart$ | async">
+      <b> {{ productDT.product.name }} - X{{ productDT.qty }}</b>
+      <span>{{ productDT.totalPrice | currency: "S/." }}</span>
+    </div>
+  </div>
+  <div class="invoice__total">
+    <b>total a pagar: </b>
+    <p>{{ total$ | async | currency: "S/." }}</p>
+  </div>
+</div>
+<!-- <section>
+  <b>count: {{ count$ | async }}</b>
+  <button (click)="decrement()">-</button>
+  <button (click)="increment()">+</button>
+  <input type="text" #jval />
+  <button (click)="saltar()">jump</button>
+</section> -->

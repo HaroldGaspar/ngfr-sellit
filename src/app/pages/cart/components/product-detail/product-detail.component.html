@@ -1,0 +1,25 @@
+<ng-container *ngIf="productDT; else productLoader">
+  <img src="{{ productDT.product.photo }}" alt="" />
+  <div class="detail">
+    <div class="detail__name">
+      <span>{{ productDT.product.name }}</span>
+      <b>{{ productDT.product.mark | uppercase }}</b>
+    </div>
+    <div class="right">
+      <p>{{ productDT.product.price | currency: "S/." }}</p>
+    </div>
+    <div class="detail__qty">
+      <button (click)="handleQty(false)">❮</button>
+      <div>Cantidad: {{ productDT.qty }}</div>
+      <button (click)="handleQty(true)">❯</button>
+    </div>
+    <div class="delete" (click)="delete()">Eliminar</div>
+  </div>
+</ng-container>
+<ng-template #productLoader>
+  <div class="row">
+    <div class="col-12 text-center">
+      <h2>Cargando</h2>
+    </div>
+  </div>
+</ng-template>

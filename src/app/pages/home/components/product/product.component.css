@@ -1,0 +1,21 @@
+.lattest__card {
+  /* margin: 1em 0; */
+}
+button {
+  width: 100%;
+}
+.span {
+  font-weight: 700;
+  display: flex;
+  direction: rtl;
+  padding-right: 0.5rem;
+}
+p {
+  height: 3rem;
+  overflow-wrap: break-word;
+  margin: 0.7rem 0;
+}
+
+img {
+  cursor: pointer;
+}

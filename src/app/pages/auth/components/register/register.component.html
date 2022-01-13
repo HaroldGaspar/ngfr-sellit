@@ -1,0 +1,41 @@
+<div class="center">
+  <form (submit)="register()">
+    <h2>Registrar usuario</h2>
+
+    <label
+      ><span>Nombre de usuario</span>
+      <input type="text" name="username" [(ngModel)]="user.username" />
+    </label>
+    <label
+      ><span>Correo</span>
+      <input type="text" name="email" [(ngModel)]="user.email" />
+    </label>
+    <label
+      ><span>Contraseña</span>
+      <input type="password" name="password" [(ngModel)]="user.password" />
+    </label>
+    <label
+      ><span>Confirmar contraseña</span>
+      <input
+        type="password"
+        name="password_dup"
+        [(ngModel)]="user.password_dup"
+      />
+    </label>
+    <div (click)="showHiddenInput()" class="hiddenBtn">Eres vendedor</div>
+    <label #storeInput hidden="true"
+      ><span>Nombre de tienda</span>
+      <input type="text" name="store" [(ngModel)]="user.store" />
+    </label>
+    <button class="send">Iniciar sesion</button>
+    <hr />
+    <small
+      ><b>Has olvidado tu contraseña?</b>haz click<a routerLink="/recovery">
+        aqui</a
+      ><br /><br />
+      <b>No estas registrado?</b>haz click<a routerLink="/register">
+        aqui</a
+      ></small
+    >
+  </form>
+</div>

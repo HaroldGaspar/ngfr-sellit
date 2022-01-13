@@ -1,0 +1,27 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <a class="nav-link" routerLink="/home"> <span>Sellit</span></a>
+    <a class="nav-link" routerLink="/last/1"> <span>Last</span></a>
+    <a class="nav-link" routerLink="/mystore" *ngIf="isSeller | async">
+      <span>Mis productos</span></a
+    >
+    <span class="spacer"></span>
+
+    <app-cart *ngIf="isLoging | async"></app-cart>
+    <ng-container *ngIf="isLoging | async; else guest">
+      <!-- <a class="cart__container" routerLink="/login"> -->
+      <button (click)="closeSesion()">
+        <mat-icon class="account__icon" color="primary">exit_to_app</mat-icon>
+      </button>
+      <!-- </a> -->
+    </ng-container>
+
+    <ng-template #guest>
+      <a class="cart__container" routerLink="/login">
+        <mat-icon class="account__icon" color="primary"
+          >account_circle</mat-icon
+        ></a
+      >
+    </ng-template>
+  </mat-toolbar-row>
+</mat-toolbar>

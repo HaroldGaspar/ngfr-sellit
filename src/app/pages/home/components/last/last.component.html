@@ -1,0 +1,29 @@
+<!-- <h2>Ultimos productos</h2>
+<p>Los ultimos productos</p> -->
+
+<div class="lattest__list">
+  <ng-container
+    *ngIf="latestProducts | async as products; else elseProductLoader"
+  >
+    <app-product
+      *ngFor="let product of products"
+      [product]="product"
+    ></app-product>
+  </ng-container>
+</div>
+
+<button (click)="updatePage()" mat-flat-button color="primary">
+  ver mas productos
+</button>
+<!-- routerLink="/last/{{ this.page + 1 }}" -->
+
+<ng-template #elseProductLoader>
+  <div class="lattest__list">
+    <app-product-loaders
+      [bars]="3"
+      [barHeight]="9"
+      *ngFor="let i of [0, 1, 2, 3]"
+    >
+    </app-product-loaders>
+  </div>
+</ng-template>

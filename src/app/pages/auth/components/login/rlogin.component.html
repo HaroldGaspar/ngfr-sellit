@@ -1,0 +1,33 @@
+<form (submit)="rlogin()" [formGroup]="loginForm">
+  <h2>Iniciar sesion</h2>
+  <label
+    ><span>Usuario</span>
+    <input type="text" formControlName="email" name="email" />
+    <small *ngIf="fm['email'].dirty && fm['email'].errors">
+      <ng-container [ngSwitch]="fm['email'].value">
+        <ng-container *ngSwitchCase="''">El email es requerido</ng-container>
+        <ng-container *ngSwitchDefault>El email es invalido</ng-container>
+      </ng-container>
+    </small>
+  </label>
+  <label
+    ><span>Contraseña</span>
+    <input type="password" formControlName="password" name="password" />
+    <small *ngIf="fm['password'].dirty && fm['password'].errors">
+      <ng-container [ngSwitch]="fm['password'].value">
+        <ng-container *ngSwitchCase="''">El password es requerido</ng-container>
+        <ng-container *ngSwitchDefault>El password es invalido</ng-container>
+      </ng-container>
+    </small>
+  </label>
+  <button [disabled]="!loginForm.valid">Iniciar sesion</button>
+  <hr />
+  <small
+    ><b>Has olvidado tu contraseña?</b>haz click<a routerLink="/recovery">
+      aqui</a
+    ><br /><br />
+    <b>No estas registrado?</b>haz click<a routerLink="/register">
+      aqui</a
+    ></small
+  >
+</form>

@@ -1,0 +1,41 @@
+<!-- <div [ngClass]="loginForm.STYLE_BACKGROUND"> -->
+<form (submit)="login()">
+  <h2>Iniciar sesion</h2>
+  <label
+    ><span>Usuario</span>
+    <input
+      type="text"
+      name="email"
+      [(ngModel)]="loginForm.email.val"
+      [(ngModel)]="credentials.email"
+      #mail="ngModel"
+    />
+    <small *ngIf="!loginForm.email.isValid() && mail.touched">{{
+      loginForm.email.error
+    }}</small>
+  </label>
+  <label
+    ><span>Contraseña</span>
+    <input
+      type="password"
+      name="password"
+      [(ngModel)]="loginForm.password.val"
+      [(ngModel)]="credentials.password"
+      #password="ngModel"
+    />
+    <small *ngIf="!loginForm.password.isValid() && password.touched">{{
+      loginForm.password.error
+    }}</small>
+  </label>
+  <button [disabled]="!isValidForm()">Iniciar sesion</button>
+  <hr />
+  <small
+    ><b>Has olvidado tu contraseña?</b>haz click<a routerLink="/recovery">
+      aqui</a
+    ><br /><br />
+    <b>No estas registrado?</b>haz click<a routerLink="/register">
+      aqui</a
+    ></small
+  >
+</form>
+<!-- </div> -->

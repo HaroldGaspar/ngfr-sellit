@@ -1,0 +1,23 @@
+.cart__quatity {
+  background: #f59929;
+  color: aliceblue;
+  border-radius: 50%;
+  font-size: 0.8em;
+  text-align: center;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  bottom: -5px;
+  right: -18px;
+  font-weight: 700;
+  /* font-style: italic; */
+}
+
+.cart__container {
+  position: relative;
+  margin-right: 1em;
+}
+.cart__icon {
+  font-size: 1.7em;
+  /* color: #fb8c00; */
+}

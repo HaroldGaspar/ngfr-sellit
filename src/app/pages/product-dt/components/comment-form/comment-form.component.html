@@ -1,0 +1,12 @@
+<form (submit)="addComent()" [formGroup]="reviewForm">
+  <h2>Agregar un comentario</h2>
+  <label
+    ><span class="span">estrellas</span>
+    <input type="number" name="stars" formControlName="stars" />
+  </label>
+  <label
+    ><span>comentario</span>
+    <input type="text" name="comment" formControlName="comment" />
+  </label>
+  <button>Comentar</button>
+</form>

@@ -1,0 +1,11 @@
+<a
+  *ngIf="{ total: total$ | async, quantity: quantity$ } as dataCart"
+  class="cart__container"
+  routerLink="/cart"
+>
+  <mat-icon class="cart__icon" color="primary">add_shopping_cart</mat-icon>
+  <div *ngIf="quantity$ | async as cartLength" class="cart__quatity">
+    {{ cartLength }}
+  </div>
+  <!-- {{ total$ | async | currency: "S/." }}- -->
+</a>

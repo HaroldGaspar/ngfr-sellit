@@ -1,0 +1,51 @@
+form {
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  padding: 1.75rem;
+  width: 300px;
+}
+.center {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+h2 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.7rem;
+}
+
+label {
+  display: grid;
+  margin-bottom: 0.7rem;
+}
+span {
+  margin-bottom: 0.5rem;
+}
+.send {
+  width: 100%;
+  border: none;
+  background-color: #333;
+  color: #ddd;
+  padding: 0.5rem;
+  transition: 0.3s ease all;
+}
+.send:hover {
+  background-color: #777;
+}
+
+.send:active {
+  background-color: purple;
+}
+
+/*###############*/
+.hiddenBtn {
+  border: none;
+  width: 100%;
+  text-align: right;
+  background: none;
+}
+.hiddenBtn:hover {
+  text-decoration: underline;
+  color: blue;
+}

@@ -1,0 +1,10 @@
+.spacer {
+  flex: 1 1 auto;
+}
+.account__icon {
+  font-size: 1.7em;
+}
+.cart__container {
+  position: relative;
+  margin-right: 1em;
+}

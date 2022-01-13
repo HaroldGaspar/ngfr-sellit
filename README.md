@@ -1,27 +1,55 @@
-# SellitApp
+## Building
+ng g c layout/footer
+ng g c layout/navigation
+ng g c layout/skeleton
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
 
-## Development server
+=== PAGE | DOMAIN ===
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+ng g m pages/product --routing
+|-ng g c pages/home
+|--ng g c products/components/last
+|--ng g c products/components/popular
+|--ng g c products/components/product
+|--ng g s products/services/products
+|--products/interface/product
 
-## Code scaffolding
+ng g c pages/product-dt -m=pages/home
+|--ng g c pages/product-dt/components/product-detail m=pages/home
+|--ng g c pages/product-dt/components/product-comment -m=pages/home
+|--ng g c pages/product-dt/components/comment-form -m=pages/home
+ng g s services/comment
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+ng g m pages/mystore --routing
+|--ng g c pages/mystore
+|--ng g c pages/mystore/components/product-form
+|--ng g c pages/mystore/components/product-list
+|--ng g c pages/mystore/components/product
+ng g s services/comment
 
-## Build
+ng g m pages/cart --routing
+|-ng g c pages/cart
+|--ng g c cart/components/cart-detail 
+|--ng g c cart/components/invoice-detail -m=pages/cart
+|--ng g s cart/services/cart
+|--cart/interface/cart
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+ng g c shared/components/cart -m=shared
 
-## Running unit tests
+ng g m shared no--routing -m=app
+|--ng g c products/components/nav
+|--ng g d products/directives/MainBgDirectives
+|--ng g p products/pipes/To10First
+|--ng g c shared/components/auth-nav
+|--ng g c shared/components/product-loaders -m=shared/shared
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+ng g m pages/auth --routing
+|-ng g c pages/auth
+|--ng g c pages/auth/components/login -m=pages/auth
+|--ng g c pages/auth/components/register -m=pages/auth
+|--ng g s pages/auth/services/auth
 
-## Running end-to-end tests
+ng g g auth/guard
+ng g i auth/interceptor
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+ng g m products no--routing -m=app

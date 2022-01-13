@@ -1,0 +1,21 @@
+<ng-container *ngIf="coments$ | async as reviews; else elseProductLoader">
+  <ng-container *ngFor="let review of reviews">
+    <mat-card class="review">
+      <mat-card-content>
+        <div class="data">
+          <span>{{ review.username }}</span>
+          <span class="starts">{{ review.stars }} stars</span>
+        </div>
+        <p>
+          {{ review.comment }}
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+</ng-container>
+
+<ng-template #elseProductLoader>
+  <!-- <div class="lattest__list"> -->
+  <app-product-loaders [bars]="3" [barHeight]="9"> </app-product-loaders>
+  <!-- </div> -->
+</ng-template>

@@ -1,0 +1,23 @@
+.invoice__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  padding: 2rem;
+  height: 300px;
+}
+
+.invoice__list > div,
+.invoice__total {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+h2 {
+  font-weight: 700;
+  font-style: italic;
+  text-align: center;
+}

@@ -1,0 +1,73 @@
+h2 {
+  text-align: center;
+}
+.detail__card {
+  display: flex;
+  width: 100%;
+  /*card*/
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  margin-bottom: 15px;
+  background-color: rgb(185, 152, 199);
+}
+
+::ng-deep .detail__container {
+  max-height: 75vh;
+  overflow: auto;
+
+  img {
+    height: 145px;
+    width: auto;
+    border-radius: 0.25rem 0 0 0.25rem;
+  }
+
+  .detail {
+    width: 100%;
+    padding: 1rem 1rem 0.25rem 1rem;
+  }
+  .right {
+    text-align: right;
+    width: 100%;
+  }
+
+  .detail__name {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .detail__qty {
+    display: flex;
+    background-color: #ddd;
+    height: 2.5rem;
+  }
+  .detail__qty > * {
+    width: 100%;
+    text-align: center;
+    height: 2.5em;
+  }
+  .detail__qty > button {
+    border: none;
+    padding: 0 15px;
+    background: #4c4c4c;
+    color: #eee;
+    border-radius: 4px;
+    transition: 0.3s ease all;
+    height: auto;
+  }
+  .detail__qty > div {
+    align-self: center;
+    height: inherit;
+  }
+
+  .delete {
+    /* width: 100%; */
+    text-align: right;
+    padding-top: 0.8rem;
+  }
+  .delete:hover {
+    text-decoration: underline;
+    color: blue;
+  }
+}
+
+/*product-detail*/
